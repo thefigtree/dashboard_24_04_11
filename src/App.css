@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --yellow: linear-gradient(180deg, #f8d49a -146.42%, #fad79d -46.42%);
   --orange: #fca61f;
@@ -30,4 +35,6 @@
   display: grid;
   border-radius: 2rem;
   background-color: var(--glass);
+  overflow: hidden;
+  grid-template-columns: 11rem;
 }
