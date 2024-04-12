@@ -8,6 +8,7 @@
 
 .logo {
   /* height: 5rem; */
+  margin-left: 2rem;
   font-weight: bold;
   font-size: 22px;
   align-items: center;
@@ -23,7 +24,29 @@
 }
 
 .menuItem {
+  height: 2.5rem;
+  margin-left: 2rem;
+  position: relative;
+  transition: all 300ms ease;
   display: flex;
   align-items: center;
   gap: 1rem;
+  border-radius: 10px;
+}
+
+.menuItem:hover {
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--activeItem);
+  margin-left: 0;
+}
+
+.active::before {
+  content: "";
+  width: 8px;
+  height: 100%;
+  margin-right: calc(1rem - 8px);
+  background-color: var(--pink);
 }
