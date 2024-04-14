@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { LayoutGroup } from "framer-motion";
+import { motion, LayoutGroup } from "framer-motion";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { UilTimes } from "@iconscout/react-unicons";
+// import Chart from "apexcharts";
 import "./Card.css";
 
 const Card = (props) => {
@@ -54,21 +55,78 @@ function CompactCard({ params, setExpanded }) {
 
 // ExpandedCard
 function ExpandedCard({ params, setExpanded }) {
+  // const data = {
+  //   options: {
+  //     chart: {
+  //       type: "area",
+  //       height: "auto",
+  //     },
+  //     dropShadow: {
+  //       enabled: false,
+  //       enabledOnSeries: undefined,
+  //       top: 0,
+  //       left: 0,
+  //       blur: 3,
+  //       color: "#000",
+  //       opacity: 0.35,
+  //     },
+  //     fill: {
+  //       colors: ["#fff"],
+  //       type: "gradient",
+  //     },
+  //     dataLables: {
+  //       enabled: false,
+  //     },
+  //     stroke: {
+  //       curve: "smooth",
+  //       colors: ["white"],
+  //     },
+  //     tooltip: {
+  //       x: {
+  //         format: "dd/MM/yy HH:mm",
+  //       },
+  //     },
+  //     grid: {
+  //       show: true,
+  //     },
+  //     xaxis: {
+  //       type: "datetime",
+  //       categories: [
+  //         "2024-04-14T00:00.000Z",
+  //         "2024-04-14T00:00.000Z",
+  //         "2024-04-14T00:00.000Z",
+  //         "2024-04-14T00:00.000Z",
+  //         "2024-04-14T00:00.000Z",
+  //         "2024-04-14T00:00.000Z",
+  //         "2024-04-14T00:00.000Z",
+  //       ],
+  //     },
+  //   },
+  // };
+
+  // console.log(data);
+
   return (
-    <div
+    <motion.div
       className="ExpandedCard"
       style={{
         background: params.color.backGround,
         boxShadow: params.color.boxShadow,
       }}
     >
-      <div>
+      <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
         <UilTimes onClick={setExpanded}></UilTimes>
       </div>
       <span>{params.title}</span>
-      <div className="chartContainer">Chart</div>
+      <div className="chartContainer">
+        {/* <Chart
+          series={params.series}
+          type="area"
+          options={data.options}
+        ></Chart> */}
+      </div>
       <span>Last 24 Hours</span>
-    </div>
+    </motion.div>
   );
 }
 
