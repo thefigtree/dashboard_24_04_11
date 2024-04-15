@@ -1,0 +1,19 @@
+.Stacks {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  background-color: white;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.stack {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.notice > div > span:nth-of-type(1) {
+  font-weight: bold;
+}

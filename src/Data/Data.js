@@ -63,3 +63,10 @@ export const CardsData = [
     ],
   },
 ];
+
+// Stack Data
+export const StacksData = [
+  { name: "React" },
+  { name: "Next js" },
+  { name: "Javascript" },
+];
