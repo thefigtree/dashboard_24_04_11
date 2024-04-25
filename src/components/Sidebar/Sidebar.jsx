@@ -10,10 +10,11 @@ const Sidebar = () => {
 
   const sidebarVariants = {
     true: {
-      left: "0",
+      left: "-60%",
     },
     false: {
-      left: "-60%",
+      display: "block",
+      left: "0",
     },
   };
 
@@ -21,13 +22,14 @@ const Sidebar = () => {
     <>
       <div
         className="bars"
-        style={expanded ? { left: "60%" } : { left: "5%" }}
+        // style={expanded ? { left: "60%" } : { left: "5%" }}
         onClick={() => setExpanded(!expanded)}
       >
         <UilBars></UilBars>
       </div>
       <motion.div
         className="Sidebar"
+        // style={expanded ? { left: "60%" } : { left: "5%" }}
         variants={sidebarVariants}
         animate={window.innerWidth <= 768 ? `${expanded}` : ""}
       >
