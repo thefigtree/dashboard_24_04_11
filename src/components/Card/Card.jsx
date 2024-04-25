@@ -3,7 +3,7 @@ import { motion, LayoutGroup } from "framer-motion";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { UilTimes } from "@iconscout/react-unicons";
-// import Chart from "apexcharts";
+// import Chart from "react-apexcharts";
 import "./Card.css";
 
 const Card = (props) => {
@@ -29,13 +29,14 @@ const Card = (props) => {
 // CompactCard
 function CompactCard({ params, setExpanded }) {
   return (
-    <div
+    <motion.div
       className="CompactCard"
       style={{
         background: params.color.backGround,
         boxShadow: params.color.boxShadow,
       }}
       onClick={setExpanded}
+      // layoutId="expandableCard"
     >
       <div className="radialBar">
         <CircularProgressbar
@@ -49,7 +50,7 @@ function CompactCard({ params, setExpanded }) {
         <span>{params.value}</span>
         <span>Last 24 Hours</span>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -113,6 +114,7 @@ function ExpandedCard({ params, setExpanded }) {
         background: params.color.backGround,
         boxShadow: params.color.boxShadow,
       }}
+      // layoutId="expandableCard"
     >
       <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
         <UilTimes onClick={setExpanded}></UilTimes>
