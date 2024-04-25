@@ -5,9 +5,9 @@ import { StacksData } from "../../Data/Data";
 const Stacks = () => {
   return (
     <div className="Stacks">
-      {StacksData.map((stack) => {
+      {StacksData.map((stack, index) => {
         return (
-          <div className="stack">
+          <div className="stack" key={index}>
             <div className="notice">
               <div style={{ marginBottom: "0.5rem" }}>
                 <span>{stack.name}</span>
